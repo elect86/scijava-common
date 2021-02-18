@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
     annotationProcessor(project(":annotationProcessor"))
+    testImplementation(project(":annotationProcessor"))
     implementation(project(":annotation"))
     implementation("io.github.classgraph:classgraph:4.8.102")
     implementation("org.scijava:parsington:2.0.0")
