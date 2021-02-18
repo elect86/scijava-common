@@ -29,6 +29,8 @@
 
 package org.scijava.annotations;
 
+import org.scijava.annotations.legacy.LegacyReader;
+
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -37,8 +39,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.scijava.annotations.legacy.LegacyReader;
 
 /**
  * Reads indexed annotations in JSON format.

@@ -60,8 +60,8 @@ public class EclipseHelperTest {
 		final URLClassLoader loader =
 			new URLClassLoader(new URL[] { dir.toURI().toURL() }, getClass()
 				.getClassLoader().getParent());
-		EclipseHelper.indexed.clear();
-		EclipseHelper.updateAnnotationIndex(loader);
+//		EclipseHelper.indexed.clear();
+//		EclipseHelper.updateAnnotationIndex(loader);
 		assertFalse(jsonDir.exists());
 	}
 
@@ -90,8 +90,8 @@ public class EclipseHelperTest {
 					return super.loadClass(className);
 				}
 			};
-		EclipseHelper.indexed.clear();
-		EclipseHelper.updateAnnotationIndex(loader);
+//		EclipseHelper.indexed.clear();
+//		EclipseHelper.updateAnnotationIndex(loader);
 		for (final Class<?> clazz : new Class<?>[] { Complex.class, Simple.class })
 		{
 			assertTrue(new File(jsonDir, clazz.getName()).exists());
@@ -108,8 +108,8 @@ public class EclipseHelperTest {
 				.delete());
 		}
 		long now = System.currentTimeMillis();
-		EclipseHelper.indexed.clear();
-		EclipseHelper.updateAnnotationIndex(loader);
+//		EclipseHelper.indexed.clear();
+//		EclipseHelper.updateAnnotationIndex(loader);
 		assertEquals(0, jsonDir.list().length);
 		/*
 		 * Most file systems provide the mtime at second granularity, not

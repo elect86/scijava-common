@@ -29,7 +29,7 @@
 
 package org.scijava.util;
 
-import org.scijava.annotations.AnnotationCombiner;
+//import org.scijava.annotations.AnnotationCombiner;
 
 /**
  * Accumulates information from the class path to make META-INF/ files
@@ -45,6 +45,6 @@ public class MetaInfCombiner {
 		}
 
 		ServiceCombiner.main(args);
-		AnnotationCombiner.main(args);
+//		AnnotationCombiner.main(args);
 	}
 }

@@ -33,7 +33,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Set;
 
-import org.scijava.annotations.AnnotationCombiner;
+//import org.scijava.annotations.AnnotationCombiner;
 
 /**
  * @deprecated Use {@link org.scijava.annotations.AnnotationCombiner} instead.
@@ -51,7 +51,7 @@ public class CombineAnnotations
 	@Deprecated
 	public CombineAnnotations() throws IOException {}
 
-	private AnnotationCombiner combiner = new AnnotationCombiner();
+//	private AnnotationCombiner combiner = new AnnotationCombiner();
 
 	/**
 	 * @deprecated Use
@@ -61,7 +61,7 @@ public class CombineAnnotations
 	@Deprecated
 	public void combine() throws IOException, ClassNotFoundException {
 		try {
-			combiner.combine(null);
+//			combiner.combine(null);
 		}
 		catch (final Exception e) {
 			if (e instanceof IOException) {
@@ -77,20 +77,20 @@ public class CombineAnnotations
 	/**
 	 * @deprecated Use {@link org.scijava.annotations.AnnotationCombiner#getAnnotationFiles()} instead.
 	 */
-	@Deprecated
-	public Set<String> getAnnotationFiles() throws IOException {
-		return combiner.getAnnotationFiles();
-	}
+//	@Deprecated
+//	public Set<String> getAnnotationFiles() throws IOException {
+//		return combiner.getAnnotationFiles();
+//	}
 
 	/**
 	 * @deprecated Use
 	 *             {@link org.scijava.annotations.AnnotationCombiner#main(String[])}
 	 *             instead.
 	 */
-	@Deprecated
-	public static void main(final String[] args) throws Exception {
-		new org.scijava.annotations.AnnotationCombiner().combine(args.length > 0
-			? new File(args[0]) : null);
-	}
+//	@Deprecated
+//	public static void main(final String[] args) throws Exception {
+//		new org.scijava.annotations.AnnotationCombiner().combine(args.length > 0
+//			? new File(args[0]) : null);
+//	}
 
 }

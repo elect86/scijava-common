@@ -43,7 +43,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import org.scijava.annotations.EclipseHelper;
+//import org.scijava.annotations.EclipseHelper;
 import org.w3c.dom.Document;
 
 /**
@@ -80,7 +80,7 @@ public final class CheckSezpoz {
 	 */
 	@Deprecated
 	public static boolean check(final boolean checkJars) throws IOException {
-		EclipseHelper.main();
+//		EclipseHelper.main();
 		return false;
 	}
 
@@ -95,7 +95,7 @@ public final class CheckSezpoz {
 	@Deprecated
 	public static boolean check(final File file) throws IOException {
 		System.err.println("Warning: Deprecated CheckSezpoz class was called!");
-		EclipseHelper.updateAnnotationIndex(new URLClassLoader(new URL[] { file.toURI().toURL() }));
+//		EclipseHelper.updateAnnotationIndex(new URLClassLoader(new URL[] { file.toURI().toURL() }));
 		return false;
 	}
 

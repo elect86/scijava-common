@@ -29,44 +29,21 @@
 
 package org.scijava.annotations;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintStream;
-import java.nio.file.NoSuchFileException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeMap;
+import org.scijava.annotations.AbstractIndexWriter.StreamFactory;
 
-import javax.annotation.processing.AbstractProcessor;
-import javax.annotation.processing.Filer;
-import javax.annotation.processing.RoundEnvironment;
-import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
+import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
-import javax.lang.model.element.AnnotationMirror;
-import javax.lang.model.element.AnnotationValue;
-import javax.lang.model.element.Element;
-import javax.lang.model.element.ExecutableElement;
-import javax.lang.model.element.Name;
-import javax.lang.model.element.TypeElement;
-import javax.lang.model.element.VariableElement;
+import javax.lang.model.element.*;
 import javax.lang.model.type.TypeMirror;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 import javax.tools.Diagnostic.Kind;
 import javax.tools.FileObject;
 import javax.tools.StandardLocation;
-
-import org.scijava.annotations.AbstractIndexWriter.StreamFactory;
+import java.io.*;
+import java.nio.file.NoSuchFileException;
+import java.util.*;
+import java.util.Map.Entry;
 
 /**
  * The annotation processor for use with Java 8 and earlier.
@@ -79,10 +56,21 @@ public class AnnotationProcessor extends AbstractProcessor {
 
 	private RoundEnvironment roundEnv;
 
+	AnnotationProcessor() {
+		processingEnv.getMessager().printMessage(Kind.NOTE, "AnnotationProcessor");
+	}
+
+	@Override
+	public synchronized void init(ProcessingEnvironment processingEnvironment) {
+		processingEnv.getMessager().printMessage(Kind.NOTE, "Processing");
+		super.init(processingEnvironment);
+	}
+
 	@Override
 	public boolean process(final Set<? extends TypeElement> elements,
 		final RoundEnvironment env)
 	{
+		System.out.println("process");
 		roundEnv = env;
 
 		final Writer writer = new Writer();

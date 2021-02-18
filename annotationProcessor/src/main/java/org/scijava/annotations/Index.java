@@ -32,13 +32,8 @@ package org.scijava.annotations;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.net.URL;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * Makes the annotation indexes accessible.
@@ -82,7 +77,7 @@ public class Index<A extends Annotation> implements Iterable<IndexItem<A>> {
 	public static <A extends Annotation> Index<A> load(final Class<A> annotation,
 		final ClassLoader loader)
 	{
-		EclipseHelper.updateAnnotationIndex(loader);
+//		EclipseHelper.updateAnnotationIndex(loader);
 		return new Index<>(annotation, loader);
 	}
 

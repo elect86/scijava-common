@@ -3,3 +3,6 @@
  */
 
 rootProject.name = "scijava-common"
+
+include("annotation")
+include("annotationProcessor")

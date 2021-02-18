@@ -29,6 +29,7 @@
 
 package org.scijava.annotations;
 
+import javax.lang.model.element.AnnotationValue;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -43,8 +44,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentSkipListMap;
-
-import javax.lang.model.element.AnnotationValue;
 
 /**
  * Writes annotations as JSON-formatted files.
@@ -281,7 +280,7 @@ public abstract class AbstractIndexWriter {
 	{
 		out.write('{');
 		boolean first = true;
-		for (Map.Entry<?, ?> entry : m.entrySet()) {
+		for (Entry<?, ?> entry : m.entrySet()) {
 			if (first) {
 				first = false;
 			}
