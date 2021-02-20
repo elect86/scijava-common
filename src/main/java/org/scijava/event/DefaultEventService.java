@@ -58,10 +58,13 @@ import org.scijava.util.ClassUtils;
  * @author Curtis Rueden
  * @author Grant Harris
  */
-@Plugin(type = Service.class, priority = DefaultEventService.PRIORITY)
 public class DefaultEventService extends AbstractService implements
 	EventService
 {
+	@Override
+	public double priority() {
+		return DefaultEventService.PRIORITY;
+	}
 
 	/**
 	 * The default event service's priority.

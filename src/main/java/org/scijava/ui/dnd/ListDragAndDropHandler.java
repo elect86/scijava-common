@@ -34,6 +34,7 @@ import java.util.List;
 import org.scijava.display.Display;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Drag-and-drop handler for lists of objects.
@@ -41,9 +42,12 @@ import org.scijava.plugin.Plugin;
  * @author Curtis Rueden
  * @author Barry DeZonia
  */
-@Plugin(type = DragAndDropHandler.class)
 public class ListDragAndDropHandler extends AbstractDragAndDropHandler<List<?>>
 {
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DragAndDropHandler.class;
+	}
 
 	@Parameter(required = false)
 	private DragAndDropService dragAndDropService;

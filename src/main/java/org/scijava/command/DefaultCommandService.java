@@ -59,7 +59,6 @@ import org.scijava.util.ListUtils;
  * @author Curtis Rueden
  * @see Command
  */
-@Plugin(type = Service.class)
 public class DefaultCommandService extends AbstractPTService<Command> implements
 	CommandService
 {

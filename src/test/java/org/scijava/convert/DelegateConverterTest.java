@@ -85,7 +85,6 @@ public class DelegateConverterTest {
 		// empty class
 	}
 
-	@Plugin(type=Converter.class)
 	public static class ABConverter extends AbstractConverter<AType, BType> {
 
 		@SuppressWarnings("unchecked")
@@ -105,7 +104,6 @@ public class DelegateConverterTest {
 		}		
 	}
 
-	@Plugin(type=Converter.class)
 	public static class BCConverter extends AbstractConverter<BType, CType> {
 
 		@SuppressWarnings("unchecked")
@@ -125,7 +123,6 @@ public class DelegateConverterTest {
 		}		
 	}
 
-	@Plugin(type=Converter.class)
 	public static class DelegateConverter extends AbstractDelegateConverter<AType, BType, CType> {
 
 		@Override

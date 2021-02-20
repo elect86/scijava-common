@@ -38,7 +38,6 @@ import org.scijava.service.Service;
  *
  * @author Mark Hiner
  */
-@Plugin(type = Service.class)
 public class DefaultScriptHeaderService extends
 	AbstractHandlerService<ScriptLanguage, ScriptHeader> implements
 	ScriptHeaderService

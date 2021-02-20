@@ -45,6 +45,7 @@ import org.scijava.module.DefaultMutableModuleItem;
 import org.scijava.parse.ParseService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.script.ScriptInfo;
 import org.scijava.script.ScriptModule;
 import org.scijava.script.ScriptService;
@@ -100,8 +101,12 @@ import org.scijava.script.ScriptService;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ScriptProcessor.class)
 public class ParameterScriptProcessor implements ScriptProcessor {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return ScriptProcessor.class;
+	}
 
 	@Parameter
 	private ScriptService scriptService;

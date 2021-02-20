@@ -161,7 +161,8 @@ public class ServiceHelper extends AbstractContextual {
 		for (final Class<? extends Service> serviceClass : serviceClasses) {
 			// Load all compatible classes
 			for (Class<? extends Service> c : classPoolList) {
-				if (serviceClass.isAssignableFrom(c)) loadService(c);
+				if (serviceClass.isAssignableFrom(c))
+					loadService(c);
 			}
 
 			// Make sure loadService gets called once on the actual provided class

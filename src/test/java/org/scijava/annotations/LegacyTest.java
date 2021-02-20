@@ -31,6 +31,7 @@ package org.scijava.annotations;
 
 import java.util.Map;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -38,13 +39,14 @@ import org.junit.Test;
  * 
  * @author Johannes Schindelin
  */
+@Ignore
 public class LegacyTest {
 
 	@Test
 	public void testLegacy() throws Exception {
-//		final Map<String, IndexItem<Complex>> map =
-//			DirectoryIndexerTest.readIndex(Complex.class, getClass().getResource(
-//				"/legacy/"));
-//		DirectoryIndexerTest.testDefaultAnnotations(map);
+		final Map<String, IndexItem<Complex>> map =
+			DirectoryIndexerTest.readIndex(Complex.class, getClass().getResource(
+				"/legacy/"));
+		DirectoryIndexerTest.testDefaultAnnotations(map);
 	}
 }

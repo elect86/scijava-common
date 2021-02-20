@@ -55,7 +55,7 @@ public interface AppService extends SingletonService<App>, SciJavaService {
 	/**
 	 * Gets the table of associated applications, keyed by name.
 	 * 
-	 * @see org.scijava.plugin.Plugin#name()
+	 * @see org.scijava.plugin.SciJavaPlugin#name
 	 */
 	Map<String, App> getApps();
 

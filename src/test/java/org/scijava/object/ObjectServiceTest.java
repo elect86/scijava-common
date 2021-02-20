@@ -98,6 +98,9 @@ public class ObjectServiceTest {
 	}
 
 	private class TestPlugin implements SciJavaPlugin {
-
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return TestPlugin.class;
+		}
 	}
 }

@@ -41,7 +41,6 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ConsoleArgument.class)
 public class SystemPropertyArgument extends AbstractConsoleArgument {
 
 	private static final String SYS_PROP_REGEX = "-D([\\w\\._-]+)(=(.*))?";

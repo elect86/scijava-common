@@ -86,22 +86,4 @@ public interface PlatformService extends SingletonService<Platform>,
 	 *         instead.
 	 */
 	boolean registerAppMenus(Object menus);
-
-	// -- Deprecated methods --
-
-	/** @deprecated Use {@link AppService} and {@link App} instead. */
-	@Deprecated
-	AppEventService getAppEventService();
-
-	/** @deprecated Use {@link #eventService()} instead. */
-	@Deprecated
-	default EventService getEventService() {
-		return eventService();
-	}
-
-	/** @deprecated Use {@link #commandService()} instead. */
-	@Deprecated
-	default CommandService getCommandService() {
-		return commandService();
-	}
 }

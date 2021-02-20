@@ -31,6 +31,7 @@ package org.scijava.io;
 import org.junit.Test;
 import org.scijava.Context;
 import org.scijava.plugin.PluginInfo;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.text.AbstractTextFormat;
 import org.scijava.text.TextFormat;
 import org.scijava.text.io.TextIOService;
@@ -62,6 +63,11 @@ public class TypedIOServiceTest {
 	}
 
 	public static class DummyTextFormat  extends AbstractTextFormat {
+
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return DummyTextFormat.class;
+		}
 
 		@Override
 		public List<String> getExtensions() {

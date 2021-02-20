@@ -39,7 +39,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultDataHandleService extends
 	AbstractWrapperService<Location, DataHandle<Location>> implements
 	DataHandleService

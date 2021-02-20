@@ -225,7 +225,6 @@ public class ScriptFinderTest {
 	// -- Helper classes --
 
 	/** "Handles" scripts with .foo extension. */
-	@Plugin(type = ScriptLanguage.class)
 	public static class FooScriptLanguage extends AbstractScriptLanguage {
 
 		@Override

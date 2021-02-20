@@ -59,8 +59,11 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class, priority = 2 * Priority.VERY_HIGH)
 public class ServicePreprocessor extends AbstractPreprocessorPlugin {
+	@Override
+	public double priority() {
+		return 2 * Priority.VERY_HIGH;
+	}
 
 	// -- ModuleProcessor methods --
 

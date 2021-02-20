@@ -45,7 +45,6 @@ import org.scijava.ui.dnd.event.DropEvent;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultDragAndDropService extends
 	AbstractHandlerService<Object, DragAndDropHandler<Object>> implements
 	DragAndDropService

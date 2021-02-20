@@ -41,7 +41,6 @@ import org.scijava.thread.ThreadService;
  *
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultTaskService extends AbstractService implements
 	TaskService
 {

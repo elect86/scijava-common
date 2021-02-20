@@ -69,7 +69,6 @@ import org.scijava.ui.viewer.DisplayViewer;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public final class DefaultUIService extends AbstractService implements
 	UIService
 {

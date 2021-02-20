@@ -124,7 +124,6 @@ public class ScriptEngineTest {
 		assertEquals(cMatches, cExpected);
 	}
 
-	@Plugin(type = ScriptLanguage.class)
 	public static class Rot13 extends AbstractScriptLanguage {
 
 		@Override

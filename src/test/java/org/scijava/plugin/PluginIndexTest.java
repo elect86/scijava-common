@@ -108,6 +108,10 @@ public class PluginIndexTest {
 
 	/** A dummy plugin for testing the plugin service. */
 	public static class FooBar implements SciJavaPlugin {
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return FooBar.class;
+		}
 		// NB: No implementation needed.
 	}
 

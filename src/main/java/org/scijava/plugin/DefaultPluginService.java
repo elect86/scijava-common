@@ -62,7 +62,6 @@ import org.scijava.util.ListUtils;
  * @see SciJavaPlugin
  * @see Plugin
  */
-@Plugin(type = Service.class)
 public class DefaultPluginService extends AbstractService implements
 	PluginService
 {

@@ -34,6 +34,7 @@ import org.scijava.Initializable;
 import org.scijava.event.EventService;
 import org.scijava.plugin.Plugin;
 import org.scijava.plugin.RichPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A SciJava service, for a particular area of functionality.
@@ -49,6 +50,11 @@ import org.scijava.plugin.RichPlugin;
  * @see Plugin
  */
 public interface Service extends RichPlugin, Initializable, Disposable {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return Service.class;
+	}
 
 	/**
 	 * Registers the service's event handler methods.

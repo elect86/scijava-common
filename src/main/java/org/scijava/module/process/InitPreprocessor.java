@@ -45,8 +45,12 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class, priority = Priority.HIGH)
 public class InitPreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return Priority.HIGH;
+	}
 
 	@Parameter(required = false)
 	private LogService log;

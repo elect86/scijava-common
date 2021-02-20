@@ -61,10 +61,10 @@ public class Index<A extends Annotation> implements Iterable<IndexItem<A>> {
 	 * @param annotation the annotation type
 	 * @return the index
 	 */
-	public static <A extends Annotation> Index<A> load(final Class<A> annotation)
-	{
-		return load(annotation, Thread.currentThread().getContextClassLoader());
-	}
+//	public static <A extends Annotation> Index<A> load(final Class<A> annotation)
+//	{
+//		return load(annotation, Thread.currentThread().getContextClassLoader());
+//	}
 
 	/**
 	 * Loads the index of all classes annotated with the specified annotation.

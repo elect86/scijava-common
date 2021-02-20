@@ -217,8 +217,12 @@ public class ConsoleServiceTest {
 
 	// -- Helper classes --
 
-	@Plugin(type = ConsoleArgument.class, priority = Priority.HIGH)
 	public static class FooArgument extends AbstractConsoleArgument {
+
+		@Override
+		public double priority() {
+			return Priority.HIGH;
+		}
 
 		public FooArgument() {
 			super(1, "--foo");
@@ -237,7 +241,6 @@ public class ConsoleServiceTest {
 		}
 	}
 
-	@Plugin(type = ConsoleArgument.class)
 	public static class BrokenArgument extends AbstractConsoleArgument {
 
 		private boolean argsHandled;

@@ -69,7 +69,6 @@ import org.scijava.util.Types;
  * @see Module
  * @see ModuleInfo
  */
-@Plugin(type = Service.class)
 public class DefaultModuleService extends AbstractService implements
 	ModuleService
 {

@@ -35,7 +35,7 @@ package org.scijava;
  * @author Johannes Schindelin
  * @author Curtis Rueden
  * @see org.scijava.Prioritized#getPriority()
- * @see org.scijava.plugin.Plugin#priority()
+ * @see org.scijava.plugin.SciJavaPlugin#priority
  */
 public final class Priority {
 
@@ -124,34 +124,4 @@ public final class Priority {
 		((Prioritized) o).setPriority(priority);
 		return true;
 	}
-
-	// -- Deprecated --
-
-	/** @deprecated Use {@link #FIRST} instead. */
-	@Deprecated
-	public static final double FIRST_PRIORITY = Double.POSITIVE_INFINITY;
-
-	/** @deprecated Use {@link #VERY_HIGH} instead. */
-	@Deprecated
-	public static final double VERY_HIGH_PRIORITY = +10000;
-
-	/** @deprecated Use {@link #HIGH} instead. */
-	@Deprecated
-	public static final double HIGH_PRIORITY = +100;
-
-	/** @deprecated Use {@link #NORMAL} instead. */
-	@Deprecated
-	public static final double NORMAL_PRIORITY = 0;
-
-	/** @deprecated Use {@link #LOW} instead. */
-	@Deprecated
-	public static final double LOW_PRIORITY = -100;
-
-	/** @deprecated Use {@link #VERY_LOW} instead. */
-	@Deprecated
-	public static final double VERY_LOW_PRIORITY = -10000;
-
-	/** @deprecated Use {@link #LAST} instead. */
-	@Deprecated
-	public static final double LAST_PRIORITY = Double.NEGATIVE_INFINITY;
 }

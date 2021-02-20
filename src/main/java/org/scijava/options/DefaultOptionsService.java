@@ -47,7 +47,6 @@ import org.scijava.service.Service;
  * @author Barry DeZonia
  * @see OptionsPlugin
  */
-@Plugin(type = Service.class)
 public class DefaultOptionsService extends
 	AbstractSingletonService<OptionsPlugin> implements OptionsService
 {

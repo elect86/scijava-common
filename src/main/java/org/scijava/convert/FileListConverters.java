@@ -49,7 +49,6 @@ import org.scijava.util.StringUtils;
 public class FileListConverters {
 	// -- String to File (list) converters --
 
-	@Plugin(type = Converter.class, priority = Priority.NORMAL)
 	public static class StringToFileConverter extends
 		AbstractConverter<String, File>
 	{
@@ -72,7 +71,6 @@ public class FileListConverters {
 
 	}
 
-	@Plugin(type = Converter.class, priority = Priority.NORMAL)
 	public static class StringToFileArrayConverter extends
 		AbstractConverter<String, File[]>
 	{
@@ -104,7 +102,6 @@ public class FileListConverters {
 
 	// -- File (list) to String converters --
 
-	@Plugin(type = Converter.class, priority = Priority.NORMAL)
 	public static class FileToStringConverter extends
 		AbstractConverter<File, String>
 	{
@@ -127,7 +124,6 @@ public class FileListConverters {
 
 	}
 
-	@Plugin(type = Converter.class, priority = Priority.NORMAL)
 	public static class FileArrayToStringConverter extends
 		AbstractConverter<File[], String>
 	{

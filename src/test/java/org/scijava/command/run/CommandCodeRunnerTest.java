@@ -115,8 +115,12 @@ public class CommandCodeRunnerTest {
 
 	// -- Helper methods --
 
-	@Plugin(type = Command.class, label = "Open Sesame")
 	public static class OpenSesame implements Command {
+
+		@Override
+		public String label() {
+			return "Open Sesame";
+		}
 
 		@Parameter(type = ItemIO.BOTH)
 		private StringBuilder buffer;

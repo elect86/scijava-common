@@ -29,19 +29,18 @@
 
 package org.scijava.plugin;
 
+import io.github.classgraph.*;
+import org.scijava.Context;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-import io.github.classgraph.ClassGraph;
-import io.github.classgraph.ClassInfo;
-import io.github.classgraph.ClassInfoList;
-import io.github.classgraph.ScanResult;
-import org.scijava.Context;
-//import org.scijava.annotations.Index;
-//import org.scijava.annotations.IndexItem;
+import org.scijava.annotations.Index;
+import org.scijava.annotations.IndexItem;
 
 /**
  * Default SciJava plugin discovery mechanism.
@@ -61,6 +60,8 @@ public class DefaultPluginFinder implements PluginFinder {
 
     private final PluginBlocklist blocklist;
 
+    public ScanResult scanResult;
+
     // -- Constructors --
 
     public DefaultPluginFinder() {
@@ -79,42 +80,39 @@ public class DefaultPluginFinder implements PluginFinder {
         final HashMap<String, Throwable> exceptions = new HashMap<>();
 
         // load the annotation indexes
-        try (ScanResult scanResult =                // Assign scanResult in try-with-resources
-                     new ClassGraph()                    // Create a new ClassGraph instance
+        scanResult = new ClassGraph()                    // Create a new ClassGraph instance
 //                             .verbose()                      // If you want to enable logging to stderr TODO
-                             .enableAnnotationInfo()                // enable annotation scanning
-                             .scan()) {                      // Perform the scan and return a ScanResult
-            // Use the ScanResult within the try block, e.g.
-            ArrayList<ClassInfo> classes = scanResult.getClassesWithAnnotation(Plugin.class.getName());
-            System.out.println();
-        }
-//        final ClassLoader classLoader = getClassLoader();
-//
+                .enableAnnotationInfo()                // enable annotation scanning
+                .scan();                      // Perform the scan and return a ScanResult
+        // Use the ScanResult within the try block, e.g.
+        ArrayList<ClassInfo> classInfos = scanResult.getClassesWithAnnotation(Plugin.class.getName());
+
+        final ClassLoader classLoader = getClassLoader();
+
 //        final Index<Plugin> annotationIndex = Index.load(Plugin.class, classLoader);
-//
-//        // create a PluginInfo object for each item in the index
-//        for (final IndexItem<Plugin> item : annotationIndex) {
-//            if (blocklist.contains(item.className())) continue;
-//            try {
-//                final PluginInfo<?> info = createInfo(item, classLoader);
-//                plugins.add(info);
-//            } catch (final Throwable t) {
-//                exceptions.put(item.className(), t);
-//            }
-//        }
+
+        // create a PluginInfo object for each item in the index
+        for (final ClassInfo classInfo : classInfos) {
+            if (blocklist.contains(classInfo.getName())) continue;
+            try {
+//                    final PluginInfo<?> info = new PluginInfo<>(classInfo);
+                final PluginInfo<?> info = new PluginInfo<>(classInfo);
+                plugins.add(info);
+            } catch (final Throwable t) {
+                exceptions.put(classInfo.getName(), t);
+            }
+        }
 
         return exceptions;
     }
 
     // -- Helper methods --
 
-    private PluginInfo<SciJavaPlugin> createInfo(
-            final IndexItem<Plugin> item, final ClassLoader classLoader) {
+    private PluginInfo<SciJavaPlugin> createInfo(final IndexItem<Plugin> item, final ClassLoader classLoader) {
         final String className = item.className();
         final Plugin plugin = item.annotation();
 
-        @SuppressWarnings("unchecked") final Class<SciJavaPlugin> pluginType =
-                (Class<SciJavaPlugin>) plugin.type();
+        @SuppressWarnings("unchecked") final Class<SciJavaPlugin> pluginType = (Class<SciJavaPlugin>) plugin.type();
 
         return new PluginInfo<>(className, pluginType, plugin, classLoader);
     }

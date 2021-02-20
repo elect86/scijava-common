@@ -31,6 +31,7 @@ package org.scijava.ui.headless;
 
 import org.scijava.display.Display;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.ui.UserInterface;
 import org.scijava.ui.viewer.AbstractDisplayViewer;
 import org.scijava.ui.viewer.DisplayViewer;
@@ -42,8 +43,12 @@ import org.scijava.util.ListUtils;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = DisplayViewer.class)
 public class HeadlessDisplayViewer extends AbstractDisplayViewer<Object> {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DisplayViewer.class;
+	}
 
 	@Override
 	public boolean isCompatible(final UserInterface ui) {

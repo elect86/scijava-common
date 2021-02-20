@@ -42,6 +42,7 @@ import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -49,6 +50,7 @@ import org.junit.Test;
  * 
  * @author Johannes Schindelin
  */
+@Ignore
 public class EclipseHelperTest {
 
 	@Test

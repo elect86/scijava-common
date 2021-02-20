@@ -49,7 +49,6 @@ import org.scijava.service.Service;
  * @author Curtis Rueden
  * @author Grant Harris
  */
-@Plugin(type = Service.class)
 public class DefaultPrefService extends AbstractPrefService {
 
 	@Parameter(required = false)

@@ -38,6 +38,7 @@ import javax.script.ScriptEngineFactory;
 import org.scijava.module.Module;
 import org.scijava.plugin.Plugin;
 import org.scijava.plugin.RichPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.plugin.SingletonPlugin;
 import org.scijava.util.VersionUtils;
 
@@ -69,6 +70,11 @@ import org.scijava.util.VersionUtils;
 public interface ScriptLanguage extends ScriptEngineFactory, RichPlugin,
 	SingletonPlugin
 {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return ScriptLanguage.class;
+	}
 
 	/** True iff this language requires a compilation step. */
 	default boolean isCompiledLanguage() {

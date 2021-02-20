@@ -37,6 +37,7 @@ import org.scijava.command.CommandInfo;
 import org.scijava.command.CommandService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.run.AbstractCodeRunner;
 import org.scijava.run.CodeRunner;
 
@@ -45,8 +46,12 @@ import org.scijava.run.CodeRunner;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = CodeRunner.class)
 public class CommandCodeRunner extends AbstractCodeRunner {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return CodeRunner.class;
+	}
 
 	@Parameter
 	private CommandService commandService;

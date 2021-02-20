@@ -46,124 +46,101 @@ public final class NumberConverters {
 	}
 	
 	//convert to short 
-	@Plugin(type = Converter.class)
 	public static class ByteToShortConverter extends NumberToShortConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 	
 	//convert to int
-	@Plugin(type = Converter.class)
 	public static class ByteToIntegerConverter extends NumberToIntegerConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class ShortToIntegerConverter extends NumberToIntegerConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 	
 	//convert to long
-	@Plugin(type = Converter.class)
 	public static class ByteToLongConverter extends NumberToLongConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class ShortToLongConverter extends NumberToLongConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class IntegerToLongConverter extends NumberToLongConverter<Integer> {
 		@Override public Class<Integer> getInputType() { return Integer.class; }
 	}
 	
 	//convert to float
-	@Plugin(type = Converter.class)
 	public static class ByteToFloatConverter extends NumberToFloatConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class ShortToFloatConverter extends NumberToFloatConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 
 	
 	//convert to double
-	@Plugin(type = Converter.class)
 	public static class ByteToDoubleConverter extends NumberToDoubleConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class ShortToDoubleConverter extends NumberToDoubleConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class IntegerToDoubleConverter extends NumberToDoubleConverter<Integer> {
 		@Override public Class<Integer> getInputType() { return Integer.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class FloatToDoubleConverter extends NumberToDoubleConverter<Float> {
 		@Override public Class<Float> getInputType() { return Float.class; }
 	}
 	
 	//convert to BigInteger
-	@Plugin(type = Converter.class)
 	public static class ByteToBigIntegerConverter extends NumberToBigIntegerConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class ShortToBigIntegerConverter extends NumberToBigIntegerConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class IntegerToBigIntegerConverter extends NumberToBigIntegerConverter<Integer> {
 		@Override public Class<Integer> getInputType() { return Integer.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class LongToBigIntegerConverter extends NumberToBigIntegerConverter<Long> {
 		@Override public Class<Long> getInputType() { return Long.class; }
 	}
 	
 	//convert to BigDecimal 
-	@Plugin(type = Converter.class)
 	public static class ByteToBigDecimalConverter extends NumberToBigDecimalConverter<Byte> {
 		@Override public Class<Byte> getInputType() { return Byte.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class ShortToBigDecimalConverter extends NumberToBigDecimalConverter<Short> {
 		@Override public Class<Short> getInputType() { return Short.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class IntegerToBigDecimalConverter extends NumberToBigDecimalConverter<Integer> {
 		@Override public Class<Integer> getInputType() { return Integer.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class LongToBigDecimalConverter extends NumberToBigDecimalConverter<Long> {
 		@Override public Class<Long> getInputType() { return Long.class; }
 	}
 
-	@Plugin(type = Converter.class)
 	public static class FloatToBigDecimalConverter extends NumberToBigDecimalConverter<Float> {
 		@Override public Class<Float> getInputType() { return Float.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class DoubleToBigDecimalConverter extends NumberToBigDecimalConverter<Double> {
 		@Override public Class<Double> getInputType() { return Double.class; }
 	}
 	
-	@Plugin(type = Converter.class)
 	public static class BigIntegerToBigDecimalConverter extends NumberToBigDecimalConverter<BigInteger> {
 		@Override public Class<BigInteger> getInputType() { return BigInteger.class; }
 	}

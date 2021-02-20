@@ -47,7 +47,6 @@ import org.scijava.ui.UserInterface;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ConsoleArgument.class)
 public class UIArgument extends AbstractConsoleArgument {
 
 	@Parameter

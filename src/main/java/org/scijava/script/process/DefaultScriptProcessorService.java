@@ -38,7 +38,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultScriptProcessorService extends
 	AbstractPTService<ScriptProcessor> implements ScriptProcessorService
 {

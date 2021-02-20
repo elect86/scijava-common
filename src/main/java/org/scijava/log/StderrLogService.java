@@ -47,8 +47,12 @@ import org.scijava.service.Service;
  * @author Johannes Schindelin
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class, priority = Priority.LOW)
 public class StderrLogService extends AbstractLogService {
+
+	@Override
+	public double priority() {
+		return Priority.LOW;
+	}
 
 	private Function<Integer, PrintStream> levelToStream =
 		level -> (level <= LogLevel.WARN) ? System.err : System.out;

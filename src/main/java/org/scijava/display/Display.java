@@ -34,6 +34,7 @@ import java.util.List;
 import org.scijava.Named;
 import org.scijava.plugin.Plugin;
 import org.scijava.plugin.RichPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A display is a particular type of plugin intended to collect objects for
@@ -52,6 +53,11 @@ import org.scijava.plugin.RichPlugin;
  * @see DisplayService
  */
 public interface Display<T> extends List<T>, RichPlugin, Named {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return Display.class;
+	}
 
 	/**
 	 * Tests whether the display is capable of visualizing objects of the given

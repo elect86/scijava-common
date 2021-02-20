@@ -37,10 +37,14 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Display.class, priority = Priority.LOW)
 public class DefaultTextDisplay extends AbstractDisplay<String> implements
 	TextDisplay
 {
+
+	@Override
+	public double priority() {
+		return Priority.LOW;
+	}
 
 	public DefaultTextDisplay() {
 		super(String.class);

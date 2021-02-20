@@ -38,8 +38,12 @@ import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
 import org.scijava.widget.InputHarvester;
 
-@Plugin(type = PreprocessorPlugin.class, priority = InputHarvester.PRIORITY + 1.0)
 public class FileListPreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return InputHarvester.PRIORITY + 1.0;
+	}
 
 	@Parameter(required = false)
 	private UIService uiService;

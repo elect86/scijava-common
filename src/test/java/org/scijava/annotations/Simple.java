@@ -41,7 +41,6 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ ElementType.FIELD, ElementType.TYPE })
-@Indexable
 public @interface Simple {
 
 	String string1() default "Hello, World!";

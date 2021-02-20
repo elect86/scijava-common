@@ -45,6 +45,8 @@ import org.scijava.script.ScriptInfo;
  */
 public interface ScriptProcessor extends SciJavaPlugin {
 
+
+
 	void begin(ScriptInfo info);
 	String process(String line);
 	default void end() {}

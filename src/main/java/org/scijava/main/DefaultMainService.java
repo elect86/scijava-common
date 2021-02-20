@@ -46,7 +46,6 @@ import org.scijava.util.Types;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultMainService extends AbstractService implements MainService {
 
 	@Parameter(required = false)

@@ -50,7 +50,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public final class DefaultPlatformService extends
 	AbstractSingletonService<Platform> implements PlatformService
 {
@@ -63,9 +62,6 @@ public final class DefaultPlatformService extends
 
 	@Parameter
 	private CommandService commandService;
-
-	@Parameter
-	private AppEventService appEventService;
 
 	/** Platform handlers applicable to this platform. */
 	private List<Platform> targetPlatforms;
@@ -80,11 +76,6 @@ public final class DefaultPlatformService extends
 	@Override
 	public CommandService commandService() {
 		return commandService;
-	}
-
-	@Override
-	public AppEventService getAppEventService() {
-		return appEventService;
 	}
 
 	@Override

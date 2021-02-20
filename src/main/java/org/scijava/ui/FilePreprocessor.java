@@ -46,9 +46,12 @@ import org.scijava.widget.InputHarvester;
  * @author Curtis Rueden
  * @see UserInterface#chooseFile(File, String)
  */
-@Plugin(type = PreprocessorPlugin.class,
-	priority = InputHarvester.PRIORITY + 0.5)
 public class FilePreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return InputHarvester.PRIORITY + 0.5;
+	}
 
 	@Parameter(required = false)
 	private UIService uiService;

@@ -56,7 +56,6 @@ import org.scijava.service.Service;
  * @author Curtis Rueden
  * @author Grant Harris
  */
-@Plugin(type = Service.class)
 public final class DefaultDisplayService extends AbstractService implements
 	DisplayService
 {

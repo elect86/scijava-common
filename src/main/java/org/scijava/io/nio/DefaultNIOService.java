@@ -47,7 +47,6 @@ import org.scijava.service.Service;
  * @author Chris Allan
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultNIOService extends AbstractService implements NIOService {
 
 	// -- Fields --

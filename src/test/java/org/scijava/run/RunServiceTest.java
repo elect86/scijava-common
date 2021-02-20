@@ -40,6 +40,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.scijava.Context;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Tests {@link RunService}.
@@ -83,8 +84,12 @@ public class RunServiceTest {
 	// -- Helper classes --
 
 	/** A {@link CodeRunner} that stringifies its arguments. */
-	@Plugin(type = CodeRunner.class)
 	public static class StringRunner extends AbstractCodeRunner {
+
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return CodeRunner.class;
+		}
 
 		@Override
 		public void run(final Object code, final Object... args)

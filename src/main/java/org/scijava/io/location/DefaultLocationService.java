@@ -40,7 +40,6 @@ import org.scijava.service.Service;
  * 
  * @author Gabriel Einsdorf
  */
-@Plugin(type = Service.class)
 public class DefaultLocationService extends
 	AbstractHandlerService<URI, LocationResolver> implements
 	LocationService

@@ -48,7 +48,6 @@ import org.scijava.menu.MenuService;
 import org.scijava.module.ModuleService;
 import org.scijava.object.ObjectService;
 import org.scijava.options.OptionsService;
-import org.scijava.platform.AppEventService;
 import org.scijava.platform.PlatformService;
 import org.scijava.plugin.AbstractRichPlugin;
 import org.scijava.plugin.PluginInfo;
@@ -138,11 +137,6 @@ public abstract class AbstractGateway extends AbstractRichPlugin implements
 	// -- Gateway methods - services --
 
 	@Override
-	public AppEventService appEvent() {
-		return get(AppEventService.class);
-	}
-
-	@Override
 	public AppService app() {
 		return get(AppService.class);
 	}
@@ -202,7 +196,7 @@ public abstract class AbstractGateway extends AbstractRichPlugin implements
 	}
 
 	@Override
-	public MenuService menu() {
+	public MenuService menu_() {
 		return get(MenuService.class);
 	}
 

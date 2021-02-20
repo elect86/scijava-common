@@ -47,8 +47,12 @@ import org.scijava.util.Types;
  *
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class, priority = Priority.VERY_HIGH)
 public class DefaultValuePreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return Priority.VERY_HIGH;
+	}
 
 	@Parameter
 	private ModuleService moduleService;

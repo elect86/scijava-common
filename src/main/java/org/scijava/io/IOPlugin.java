@@ -35,6 +35,7 @@ import org.scijava.io.location.FileLocation;
 import org.scijava.io.location.Location;
 import org.scijava.plugin.HandlerPlugin;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A plugin which extends an application's I/O capabilities.
@@ -51,6 +52,11 @@ import org.scijava.plugin.Plugin;
  * @see IOService
  */
 public interface IOPlugin<D> extends HandlerPlugin<Location> {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return IOPlugin.class;
+	}
 
 	/** The type of data opened and/or saved by the plugin. */
 	Class<D> getDataType();

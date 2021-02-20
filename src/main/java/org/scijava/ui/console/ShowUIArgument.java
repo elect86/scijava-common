@@ -49,7 +49,6 @@ import org.scijava.ui.UIService;
  * @author Curtis Rueden
  * @see Gateway#launch(String[])
  */
-@Plugin(type = ConsoleArgument.class)
 public class ShowUIArgument extends AbstractConsoleArgument {
 
 	@Parameter(required = false)

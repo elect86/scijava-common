@@ -68,8 +68,12 @@ public class PluginFinderTest {
 		System.getProperties().remove("scijava.plugin.blocklist");
 	}
 
-	@Plugin(type = SciJavaPlugin.class)
 	public static class BlocklistedPlugin implements SciJavaPlugin {
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return SciJavaPlugin.class;
+		}
+
 		// NB: No implementation needed.
 	}
 

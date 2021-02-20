@@ -49,8 +49,8 @@ public class IndexItem<A extends Annotation> {
 	private final String className;
 	private final Map<Object, Object> map;
 
-	IndexItem(final Class<A> annotation, final ClassLoader loader,
-		final String className, final Map<Object, Object> map)
+	public IndexItem(final Class<A> annotation, final ClassLoader loader,
+					 final String className, final Map<Object, Object> map)
 	{
 		this.annotation = annotation;
 		this.loader = loader;

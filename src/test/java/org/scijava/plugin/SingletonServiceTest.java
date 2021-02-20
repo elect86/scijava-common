@@ -169,7 +169,6 @@ public class SingletonServiceTest {
 	/**
 	 * Dummy {@link Converter} that is added automatically.
 	 */
-	@Plugin(type = Converter.class)
 	public static class DiscoveredFoodConverter extends
 		AbstractConverter<Orange, Peach>
 	{
@@ -249,10 +248,13 @@ public class SingletonServiceTest {
 			.getInstances().size());
 	}
 
-	@Plugin(type = DummyPlugin.class)
 	public static class DummyPlugin extends AbstractRichPlugin implements
 		SingletonPlugin
 	{
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return DummyPlugin.class;
+		}
 		// NB: No implementation needed.
 	}
 
@@ -266,10 +268,13 @@ public class SingletonServiceTest {
 		}
 	}
 
-	@Plugin(type = DummyPlugin2.class)
 	public static class DummyPlugin2 extends AbstractRichPlugin implements
 		SingletonPlugin
 	{
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return DummyPlugin2.class;
+		}
 		// NB: No implementation needed.
 	}
 

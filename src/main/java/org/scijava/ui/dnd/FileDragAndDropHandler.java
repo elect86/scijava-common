@@ -40,6 +40,7 @@ import org.scijava.io.location.FileLocation;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Drag-and-drop handler for files.
@@ -47,10 +48,18 @@ import org.scijava.plugin.Plugin;
  * @author Curtis Rueden
  * @author Barry DeZonia
  */
-@Plugin(type = DragAndDropHandler.class, priority = Priority.LOW)
 public class FileDragAndDropHandler extends
 	AbstractDragAndDropHandler<File>
 {
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DragAndDropHandler.class;
+	}
+
+	@Override
+	public double priority() {
+		return Priority.LOW;
+	}
 
 	@Parameter(required = false)
 	private IOService ioService;

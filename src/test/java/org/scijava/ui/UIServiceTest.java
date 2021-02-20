@@ -40,6 +40,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.scijava.Context;
 import org.scijava.display.Display;
+import org.scijava.io.TypedIOServiceTest;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.ui.headless.HeadlessUI;
 import org.scijava.ui.viewer.DisplayWindow;
 
@@ -95,6 +97,11 @@ public class UIServiceTest {
 	}
 
 	private static final class MockUserInterface extends AbstractUserInterface {
+
+		@Override
+		public Class<? extends SciJavaPlugin> type() {
+			return MockUserInterface.class;
+		}
 
 		@Override
 		public DisplayWindow createDisplayWindow(final Display<?> display) {

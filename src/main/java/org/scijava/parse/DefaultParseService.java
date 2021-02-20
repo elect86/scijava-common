@@ -46,7 +46,6 @@ import org.scijava.util.ObjectArray;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultParseService extends AbstractService implements
 	ParseService
 {

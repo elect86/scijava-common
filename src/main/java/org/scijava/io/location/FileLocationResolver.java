@@ -31,15 +31,21 @@ package org.scijava.io.location;
 
 import java.net.URI;
 
+import org.scijava.io.handle.DataHandle;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Implementation of {@link LocationResolver} for {@link FileLocation}.
  * 
  * @author Gabriel Einsdorf
  */
-@Plugin(type = LocationResolver.class)
 public class FileLocationResolver extends AbstractLocationResolver {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return LocationResolver.class;
+	}
 
 	public FileLocationResolver() {
 		super("file");

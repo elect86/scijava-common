@@ -6,13 +6,13 @@
  * %%
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -33,34 +33,30 @@ import java.util.Map;
 import java.util.WeakHashMap;
 
 import org.scijava.Priority;
-import org.scijava.plugin.Plugin;
 import org.scijava.service.AbstractService;
 import org.scijava.service.Service;
 
 /**
  * Trivial {@link CacheService} implementation. Wraps a {@link WeakHashMap}
  */
-@Plugin(type = Service.class, priority = Priority.VERY_LOW)
-public class DefaultCacheService extends AbstractService implements
-	CacheService
-{
+public class DefaultCacheService extends AbstractService implements CacheService {
 
-	private Map<Object, Object> map;
+    private Map<Object, Object> map;
 
-	@Override
-	public void put(final Object key, final Object value) {
-		map.put(key, value);
-	}
+    @Override
+    public void put(final Object key, final Object value) {
+        map.put(key, value);
+    }
 
-	@Override
-	public Object get(final Object key) {
-		return map.get(key);
-	}
+    @Override
+    public Object get(final Object key) {
+        return map.get(key);
+    }
 
-	// -- Service Methods --
+    // -- Service Methods --
 
-	@Override
-	public void initialize() {
-		map = new WeakHashMap<>();
-	}
+    @Override
+    public void initialize() {
+        map = new WeakHashMap<>();
+    }
 }

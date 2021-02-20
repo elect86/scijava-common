@@ -37,6 +37,7 @@ import org.scijava.Priority;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.run.AbstractCodeRunner;
 import org.scijava.run.CodeRunner;
 import org.scijava.util.Types;
@@ -46,8 +47,17 @@ import org.scijava.util.Types;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = CodeRunner.class, priority = Priority.LOW)
 public class MainCodeRunner extends AbstractCodeRunner {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return CodeRunner.class;
+	}
+
+	@Override
+	public double priority() {
+		return Priority.LOW;
+	}
 
 	@Parameter(required = false)
 	private LogService log;

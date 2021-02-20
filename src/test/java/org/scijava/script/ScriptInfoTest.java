@@ -388,7 +388,6 @@ public class ScriptInfoTest {
 		assertEquals(choices, item.getChoices());
 	}
 
-	@Plugin(type = ScriptLanguage.class)
 	public static class BindingSizes extends AbstractScriptLanguage {
 
 		@Override

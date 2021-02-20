@@ -38,6 +38,5 @@ import org.scijava.service.Service;
  *
  * @author Deborah Schmidt
  */
-@Plugin(type = Service.class)
 public class DefaultTextIOService extends AbstractTypedIOService<String> implements TextIOService {
 }

@@ -51,8 +51,12 @@ import org.scijava.util.Types;
  *
  * @author Mark Hiner
  */
-@Plugin(type = Converter.class, priority = Priority.FIRST)
 public class NullConverter extends AbstractConverter<Object, Object> {
+
+	@Override
+	public double priority() {
+		return Priority.FIRST;
+	}
 
 	@Override
 	public boolean canConvert(final ConversionRequest request) {

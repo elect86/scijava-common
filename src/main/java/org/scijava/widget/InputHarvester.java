@@ -54,6 +54,8 @@ import org.scijava.module.ModuleItem;
  */
 public interface InputHarvester<P, W> {
 
+	// TODO it doesnt extend SciJava?
+
 	double PRIORITY = Priority.VERY_LOW;
 
 	/**

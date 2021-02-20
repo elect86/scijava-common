@@ -40,6 +40,7 @@ import org.scijava.display.event.input.MsWheelEvent;
 import org.scijava.input.MouseCursor;
 import org.scijava.plugin.Plugin;
 import org.scijava.plugin.RichPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.plugin.SingletonPlugin;
 
 /**
@@ -65,6 +66,11 @@ import org.scijava.plugin.SingletonPlugin;
  * @see ToolService
  */
 public interface Tool extends RichPlugin, SingletonPlugin {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return Tool.class;
+	}
 
 	/** When true, tool has no button but rather is active all the time. */
 	default boolean isAlwaysActive() {

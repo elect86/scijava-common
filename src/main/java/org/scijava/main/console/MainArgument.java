@@ -46,7 +46,6 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ConsoleArgument.class)
 public class MainArgument extends AbstractConsoleArgument {
 
 	@Parameter(required = false)

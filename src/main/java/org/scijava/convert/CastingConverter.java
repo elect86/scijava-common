@@ -37,8 +37,12 @@ import org.scijava.util.Types;
  *
  * @author Mark Hiner
  */
-@Plugin(type = Converter.class, priority = Priority.EXTREMELY_HIGH)
 public class CastingConverter extends AbstractConverter<Object, Object> {
+
+	@Override
+	public double priority() {
+		return Priority.EXTREMELY_HIGH;
+	}
 
 	@Override
 	public boolean canConvert(final Object src, final Class<?> dest) {

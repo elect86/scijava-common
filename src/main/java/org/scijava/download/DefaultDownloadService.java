@@ -48,7 +48,6 @@ import org.scijava.task.TaskService;
  *
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultDownloadService extends AbstractService implements
 	DownloadService
 {

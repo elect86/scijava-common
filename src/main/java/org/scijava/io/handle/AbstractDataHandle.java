@@ -31,6 +31,7 @@ package org.scijava.io.handle;
 
 import org.scijava.io.location.Location;
 import org.scijava.plugin.AbstractWrapperPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Abstract base class for {@link DataHandle} plugins.
@@ -40,6 +41,11 @@ import org.scijava.plugin.AbstractWrapperPlugin;
 public abstract class AbstractDataHandle<L extends Location> extends
 	AbstractWrapperPlugin<L> implements DataHandle<L>
 {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DataHandle.class;
+	}
 
 	private byte[] conversionBuffer = new byte[8];
 	

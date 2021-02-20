@@ -44,7 +44,6 @@ import org.scijava.plugin.Plugin;
  *
  * @author Matthias Arzt
  */
-@Plugin(type = PreprocessorPlugin.class)
 public class LoggerPreprocessor extends AbstractPreprocessorPlugin {
 
 	@Parameter(required = false)

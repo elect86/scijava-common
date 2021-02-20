@@ -100,7 +100,6 @@ public class InvalidCommandTest {
 	// -- Helper classes --
 
 	/** A perfectly valid command! */
-	@Plugin(type = Command.class)
 	public static class ValidCommand implements Command {
 
 		@Parameter(stepSize = "10")
@@ -117,7 +116,6 @@ public class InvalidCommandTest {
 	}
 
 	/** A very much invalid command, for multiple reasons, explained below. */
-	@Plugin(type = Command.class)
 	public static abstract class InvalidCommand extends ValidCommand {
 
 		/**

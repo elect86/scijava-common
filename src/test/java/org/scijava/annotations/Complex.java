@@ -41,7 +41,6 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Indexable
 public @interface Complex {
 
 	// primitive types

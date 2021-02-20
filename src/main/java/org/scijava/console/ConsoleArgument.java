@@ -33,6 +33,7 @@ import java.util.LinkedList;
 
 import org.scijava.plugin.HandlerPlugin;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A plugin which extends an application's command line argument handling.
@@ -49,6 +50,11 @@ import org.scijava.plugin.Plugin;
  */
 public interface ConsoleArgument extends HandlerPlugin<LinkedList<String>> {
 
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return ConsoleArgument.class;
+	}
+
 	/** Handles the <em>front</em> of the given list of arguments. */
 	void handle(final LinkedList<String> args);
 
@@ -59,4 +65,5 @@ public interface ConsoleArgument extends HandlerPlugin<LinkedList<String>> {
 	default Class<LinkedList<String>> getType() {
 		return (Class) String.class;
 	}
+
 }

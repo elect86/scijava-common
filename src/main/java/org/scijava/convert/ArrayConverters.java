@@ -6,13 +6,13 @@
  * %%
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -49,276 +49,324 @@ import org.scijava.util.ShortArray;
  */
 public class ArrayConverters {
 
-	// -- Integer array converters --
+    // -- Integer array converters --
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class IntArrayWrapper extends
-		PrimitiveArrayWrapper<int[], Integer, IntArray>
-	{
+    public static class IntArrayWrapper extends
+            PrimitiveArrayWrapper<int[], Integer, IntArray> {
 
-		@Override
-		public Class<IntArray> getOutputType() {
-			return IntArray.class;
-		}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<int[]> getInputType() {
-			return int[].class;
-		}
-	}
+        @Override
+        public Class<IntArray> getOutputType() {
+            return IntArray.class;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class IntArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<int[], Integer, IntArray>
-	{
+        @Override
+        public Class<int[]> getInputType() {
+            return int[].class;
+        }
+    }
 
-		@Override
-		public Class<int[]> getOutputType() {
-			return int[].class;
-		}
+    public static class IntArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<int[], Integer, IntArray> {
 
-		@Override
-		public Class<IntArray> getInputType() {
-			return IntArray.class;
-		}
-	}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-	// -- Byte array converters --
+        @Override
+        public Class<int[]> getOutputType() {
+            return int[].class;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class ByteArrayWrapper extends
-		PrimitiveArrayWrapper<byte[], Byte, ByteArray>
-	{
+        @Override
+        public Class<IntArray> getInputType() {
+            return IntArray.class;
+        }
+    }
 
-		@Override
-		public Class<ByteArray> getOutputType() {
-			return ByteArray.class;
-		}
+    // -- Byte array converters --
 
-		@Override
-		public Class<byte[]> getInputType() {
-			return byte[].class;
-		}
-	}
+    public static class ByteArrayWrapper extends
+            PrimitiveArrayWrapper<byte[], Byte, ByteArray> {
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class ByteArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<byte[], Byte, ByteArray>
-	{
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<byte[]> getOutputType() {
-			return byte[].class;
-		}
+        @Override
+        public Class<ByteArray> getOutputType() {
+            return ByteArray.class;
+        }
 
-		@Override
-		public Class<ByteArray> getInputType() {
-			return ByteArray.class;
-		}
-	}
+        @Override
+        public Class<byte[]> getInputType() {
+            return byte[].class;
+        }
+    }
 
-	// -- Bool array converters --
+    public static class ByteArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<byte[], Byte, ByteArray> {
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class BoolArrayWrapper extends
-		PrimitiveArrayWrapper<boolean[], Boolean, BoolArray>
-	{
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<BoolArray> getOutputType() {
-			return BoolArray.class;
-		}
+        @Override
+        public Class<byte[]> getOutputType() {
+            return byte[].class;
+        }
 
-		@Override
-		public Class<boolean[]> getInputType() {
-			return boolean[].class;
-		}
-	}
+        @Override
+        public Class<ByteArray> getInputType() {
+            return ByteArray.class;
+        }
+    }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class BoolArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<boolean[], Boolean, BoolArray>
-	{
+    // -- Bool array converters --
 
-		@Override
-		public Class<boolean[]> getOutputType() {
-			return boolean[].class;
-		}
+    public static class BoolArrayWrapper extends
+            PrimitiveArrayWrapper<boolean[], Boolean, BoolArray> {
 
-		@Override
-		public Class<BoolArray> getInputType() {
-			return BoolArray.class;
-		}
-	}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-	// -- Char array converters --
+        @Override
+        public Class<BoolArray> getOutputType() {
+            return BoolArray.class;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class CharArrayWrapper extends
-		PrimitiveArrayWrapper<char[], Character, CharArray>
-	{
+        @Override
+        public Class<boolean[]> getInputType() {
+            return boolean[].class;
+        }
+    }
 
-		@Override
-		public Class<CharArray> getOutputType() {
-			return CharArray.class;
-		}
+    public static class BoolArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<boolean[], Boolean, BoolArray> {
 
-		@Override
-		public Class<char[]> getInputType() {
-			return char[].class;
-		}
-	}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class CharArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<char[], Character, CharArray>
-	{
+        @Override
+        public Class<boolean[]> getOutputType() {
+            return boolean[].class;
+        }
 
-		@Override
-		public Class<char[]> getOutputType() {
-			return char[].class;
-		}
+        @Override
+        public Class<BoolArray> getInputType() {
+            return BoolArray.class;
+        }
+    }
 
-		@Override
-		public Class<CharArray> getInputType() {
-			return CharArray.class;
-		}
-	}
+    // -- Char array converters --
 
-	// -- Short array converters --
+    public static class CharArrayWrapper extends
+            PrimitiveArrayWrapper<char[], Character, CharArray> {
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class ShortArrayWrapper extends
-		PrimitiveArrayWrapper<short[], Short, ShortArray>
-	{
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<ShortArray> getOutputType() {
-			return ShortArray.class;
-		}
+        @Override
+        public Class<CharArray> getOutputType() {
+            return CharArray.class;
+        }
 
-		@Override
-		public Class<short[]> getInputType() {
-			return short[].class;
-		}
-	}
+        @Override
+        public Class<char[]> getInputType() {
+            return char[].class;
+        }
+    }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class ShortArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<short[], Short, ShortArray>
-	{
+    public static class CharArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<char[], Character, CharArray> {
 
-		@Override
-		public Class<short[]> getOutputType() {
-			return short[].class;
-		}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<ShortArray> getInputType() {
-			return ShortArray.class;
-		}
-	}
+        @Override
+        public Class<char[]> getOutputType() {
+            return char[].class;
+        }
 
-	// -- Float array converters --
+        @Override
+        public Class<CharArray> getInputType() {
+            return CharArray.class;
+        }
+    }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class FloatArrayWrapper extends
-		PrimitiveArrayWrapper<float[], Float, FloatArray>
-	{
+    // -- Short array converters --
 
-		@Override
-		public Class<FloatArray> getOutputType() {
-			return FloatArray.class;
-		}
+    public static class ShortArrayWrapper extends
+            PrimitiveArrayWrapper<short[], Short, ShortArray> {
 
-		@Override
-		public Class<float[]> getInputType() {
-			return float[].class;
-		}
-	}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class FloatArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<float[], Float, FloatArray>
-	{
+        @Override
+        public Class<ShortArray> getOutputType() {
+            return ShortArray.class;
+        }
 
-		@Override
-		public Class<float[]> getOutputType() {
-			return float[].class;
-		}
+        @Override
+        public Class<short[]> getInputType() {
+            return short[].class;
+        }
+    }
 
-		@Override
-		public Class<FloatArray> getInputType() {
-			return FloatArray.class;
-		}
-	}
+    public static class ShortArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<short[], Short, ShortArray> {
 
-	// -- Double array converters --
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class DoubleArrayWrapper extends
-		PrimitiveArrayWrapper<double[], Double, DoubleArray>
-	{
+        @Override
+        public Class<short[]> getOutputType() {
+            return short[].class;
+        }
 
-		@Override
-		public Class<DoubleArray> getOutputType() {
-			return DoubleArray.class;
-		}
+        @Override
+        public Class<ShortArray> getInputType() {
+            return ShortArray.class;
+        }
+    }
 
-		@Override
-		public Class<double[]> getInputType() {
-			return double[].class;
-		}
-	}
+    // -- Float array converters --
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class DoubleArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<double[], Double, DoubleArray>
-	{
+    public static class FloatArrayWrapper extends
+            PrimitiveArrayWrapper<float[], Float, FloatArray> {
 
-		@Override
-		public Class<double[]> getOutputType() {
-			return double[].class;
-		}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<DoubleArray> getInputType() {
-			return DoubleArray.class;
-		}
-	}
+        @Override
+        public Class<FloatArray> getOutputType() {
+            return FloatArray.class;
+        }
 
-	// -- Long array converters --
+        @Override
+        public Class<float[]> getInputType() {
+            return float[].class;
+        }
+    }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class LongArrayWrapper extends
-		PrimitiveArrayWrapper<long[], Long, LongArray>
-	{
+    public static class FloatArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<float[], Float, FloatArray> {
 
-		@Override
-		public Class<LongArray> getOutputType() {
-			return LongArray.class;
-		}
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
 
-		@Override
-		public Class<long[]> getInputType() {
-			return long[].class;
-		}
-	}
+        @Override
+        public Class<float[]> getOutputType() {
+            return float[].class;
+        }
 
-	@Plugin(type = Converter.class, priority = Priority.HIGH)
-	public static class LongArrayUnwrapper extends
-		PrimitiveArrayUnwrapper<long[], Long, LongArray>
-	{
+        @Override
+        public Class<FloatArray> getInputType() {
+            return FloatArray.class;
+        }
+    }
 
-		@Override
-		public Class<long[]> getOutputType() {
-			return long[].class;
-		}
+    // -- Double array converters --
 
-		@Override
-		public Class<LongArray> getInputType() {
-			return LongArray.class;
-		}
-	}
+    public static class DoubleArrayWrapper extends
+            PrimitiveArrayWrapper<double[], Double, DoubleArray> {
+
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
+
+        @Override
+        public Class<DoubleArray> getOutputType() {
+            return DoubleArray.class;
+        }
+
+        @Override
+        public Class<double[]> getInputType() {
+            return double[].class;
+        }
+    }
+
+    public static class DoubleArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<double[], Double, DoubleArray> {
+
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
+
+        @Override
+        public Class<double[]> getOutputType() {
+            return double[].class;
+        }
+
+        @Override
+        public Class<DoubleArray> getInputType() {
+            return DoubleArray.class;
+        }
+    }
+
+    // -- Long array converters --
+
+    public static class LongArrayWrapper extends
+            PrimitiveArrayWrapper<long[], Long, LongArray> {
+
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
+
+        @Override
+        public Class<LongArray> getOutputType() {
+            return LongArray.class;
+        }
+
+        @Override
+        public Class<long[]> getInputType() {
+            return long[].class;
+        }
+    }
+
+    public static class LongArrayUnwrapper extends
+            PrimitiveArrayUnwrapper<long[], Long, LongArray> {
+
+        @Override
+        public double priority() {
+            return Priority.HIGH;
+        }
+
+        @Override
+        public Class<long[]> getOutputType() {
+            return long[].class;
+        }
+
+        @Override
+        public Class<LongArray> getInputType() {
+            return LongArray.class;
+        }
+    }
 
 }

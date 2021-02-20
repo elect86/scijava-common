@@ -38,6 +38,7 @@ import org.scijava.module.ModuleInfo;
 import org.scijava.module.ModuleService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A {@link ScriptProcessor} which parses the {@code #@script} directive.
@@ -93,8 +94,17 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ScriptProcessor.class, priority=Priority.HIGH)
 public class ScriptDirectiveScriptProcessor extends DirectiveScriptProcessor {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return ScriptProcessor.class;
+	}
+
+	@Override
+	public double priority() {
+		return Priority.HIGH;
+	}
 
 	public ScriptDirectiveScriptProcessor() {
 		super(directive -> "script".equals(directive));

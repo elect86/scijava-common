@@ -33,6 +33,7 @@ import java.util.Collection;
 
 import org.scijava.app.SciJavaApp;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.service.Service;
 
 /**
@@ -42,8 +43,10 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Gateway.class, name = "sj")
+//@Plugin(type = Gateway.class, name = "sj")
 public class SciJava extends AbstractGateway {
+
+
 
 	// -- Constructors --
 
@@ -109,5 +112,10 @@ public class SciJava extends AbstractGateway {
 	 */
 	public SciJava(final Context context) {
 		super(SciJavaApp.NAME, context);
+	}
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return null;
 	}
 }

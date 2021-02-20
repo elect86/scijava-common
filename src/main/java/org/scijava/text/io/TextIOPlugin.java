@@ -46,8 +46,12 @@ import org.scijava.text.TextService;
  * @author Curtis Rueden
  * @see TextService
  */
-@Plugin(type = IOPlugin.class, priority = Priority.LOW - 1)
 public class TextIOPlugin extends AbstractIOPlugin<String> {
+
+	@Override
+	public double priority() {
+		return Priority.LOW - 1;
+	}
 
 	@Parameter(required = false)
 	private TextService textService;

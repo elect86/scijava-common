@@ -52,7 +52,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public final class DefaultObjectService extends AbstractService implements
 	ObjectService
 {

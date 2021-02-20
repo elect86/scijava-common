@@ -123,11 +123,7 @@ public abstract class AbstractIndexWriter {
 		if (in == null) {
 			return;
 		}
-		Map<String, Object> m = map.get(annotationName);
-		if (m == null) {
-			m = new LinkedHashMap<>();
-			map.put(annotationName, m);
-		}
+		Map<String, Object> m = map.computeIfAbsent(annotationName, k -> new LinkedHashMap<>());
 		/*
 		 * To determine whether the index needs to be written out,
 		 * we need to keep track of changed entries.

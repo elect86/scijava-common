@@ -38,6 +38,7 @@ import javax.script.ScriptException;
 
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.run.AbstractCodeRunner;
 import org.scijava.run.CodeRunner;
 import org.scijava.script.ScriptService;
@@ -48,8 +49,12 @@ import org.scijava.script.ScriptService;
  * @author Curtis Rueden
  * @author Mark Hiner
  */
-@Plugin(type = CodeRunner.class)
 public class ScriptCodeRunner extends AbstractCodeRunner {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return CodeRunner.class;
+	}
 
 	@Parameter
 	private ScriptService scriptService;

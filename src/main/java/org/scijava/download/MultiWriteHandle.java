@@ -37,6 +37,7 @@ import java.util.List;
 import org.scijava.io.handle.AbstractDataHandle;
 import org.scijava.io.handle.DataHandle;
 import org.scijava.io.location.Location;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * {@link DataHandle} plugin for writing to multiple {@link DataHandle}s.

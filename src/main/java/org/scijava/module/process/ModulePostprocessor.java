@@ -40,6 +40,7 @@ import org.scijava.module.Module;
  * @author Curtis Rueden
  */
 public interface ModulePostprocessor extends ModuleProcessor {
+    // TODO check me, this doesnt extend SciJavaPlugin
 	// ModulePostprocessor trivially extends ModuleProcessor to differentiate
 	// preprocessors from postprocessors while sharing the same contract.
 }

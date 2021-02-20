@@ -41,9 +41,12 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class,
-	priority = SaveInputsPreprocessor.PRIORITY - 1)
 public class CheckInputsPreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return SaveInputsPreprocessor.PRIORITY - 1;
+	}
 
 	@Parameter(required = false)
 	private LogService log;

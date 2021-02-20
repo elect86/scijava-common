@@ -34,14 +34,19 @@ import java.util.Arrays;
 
 import org.scijava.io.location.DummyLocation;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * A {@link DataHandle} which reads all zeroes, and writes no actual data.
  *
  * @author Curtis Rueden
  */
-@Plugin(type = DataHandle.class)
 public class DummyHandle extends AbstractDataHandle<DummyLocation> {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DataHandle.class;
+	}
 
 	// -- Fields --
 

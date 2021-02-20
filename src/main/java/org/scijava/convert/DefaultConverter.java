@@ -66,8 +66,12 @@ import org.scijava.util.Types;
  *
  * @author Mark Hiner
  */
-@Plugin(type = Converter.class, priority = Priority.EXTREMELY_LOW)
 public class DefaultConverter extends AbstractConverter<Object, Object> {
+
+	@Override
+	public double priority() {
+		return Priority.EXTREMELY_LOW;
+	}
 
 	// -- ConversionHandler methods --
 

@@ -51,7 +51,6 @@ import org.scijava.thread.ThreadService.ThreadContext;
  *
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultConsoleService extends
 	AbstractHandlerService<LinkedList<String>, ConsoleArgument> implements
 	ConsoleService

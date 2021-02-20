@@ -46,9 +46,12 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class,
-	priority = SaveInputsPreprocessor.PRIORITY)
 public class SaveInputsPreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return SaveInputsPreprocessor.PRIORITY;
+	}
 
 	public static final double PRIORITY = Priority.VERY_LOW - 1;
 

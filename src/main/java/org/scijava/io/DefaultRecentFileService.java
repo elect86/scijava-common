@@ -69,7 +69,6 @@ import org.scijava.util.FileUtils;
  * @author Grant Harris
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public final class DefaultRecentFileService extends AbstractService implements
 	RecentFileService
 {

@@ -52,6 +52,10 @@ import org.scijava.plugin.SciJavaPlugin;
 public interface PreprocessorPlugin extends SciJavaPlugin, Contextual,
 	ModulePreprocessor
 {
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return PreprocessorPlugin.class;
+	}
 	// PreprocessorPlugin is a module preprocessor,
 	// discoverable via the plugin discovery mechanism.
 }

@@ -53,7 +53,6 @@ import org.scijava.service.Service;
  * @author Curtis Rueden
  * @see ShadowMenu
  */
-@Plugin(type = Service.class)
 public class DefaultMenuService extends AbstractService implements MenuService
 {
 

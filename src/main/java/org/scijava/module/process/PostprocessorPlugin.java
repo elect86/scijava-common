@@ -52,6 +52,11 @@ import org.scijava.plugin.SciJavaPlugin;
 public interface PostprocessorPlugin extends SciJavaPlugin, Contextual,
 	ModulePostprocessor
 {
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return PostprocessorPlugin.class;
+	}
+
 	// PostprocessorPlugin is a module postprocessor,
 	// discoverable via the plugin discovery mechanism.
 }

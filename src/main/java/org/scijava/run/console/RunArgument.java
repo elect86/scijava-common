@@ -47,7 +47,6 @@ import org.scijava.startup.StartupService;
  *
  * @author Curtis Rueden
  */
-@Plugin(type = ConsoleArgument.class)
 public class RunArgument extends AbstractConsoleArgument {
 
 	@Parameter

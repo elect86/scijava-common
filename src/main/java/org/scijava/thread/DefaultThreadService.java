@@ -51,7 +51,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public final class DefaultThreadService extends AbstractService implements
 	ThreadService
 {

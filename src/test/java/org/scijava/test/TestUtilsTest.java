@@ -37,6 +37,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -47,6 +48,7 @@ import org.junit.Test;
 public class TestUtilsTest {
 
 	@Test
+	@Ignore
 	public void testCreateTemporaryDirectory() throws IOException {
 		final File tmp1 = TestUtils.createTemporaryDirectory("test-utils-test-");
 		assertTrue("Not in target/: " + tmp1.getAbsolutePath(), tmp1

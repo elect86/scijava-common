@@ -55,7 +55,6 @@ import org.scijava.welcome.event.WelcomeEvent;
  * @author Curtis Rueden
  * @author Mark Hiner
  */
-@Plugin(type = Service.class)
 public class DefaultWelcomeService extends AbstractService implements
 	WelcomeService
 {

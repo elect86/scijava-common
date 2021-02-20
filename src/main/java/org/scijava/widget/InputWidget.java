@@ -31,6 +31,7 @@ package org.scijava.widget;
 
 import org.scijava.module.ModuleItem;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.plugin.WrapperPlugin;
 
 /**
@@ -56,6 +57,11 @@ import org.scijava.plugin.WrapperPlugin;
 public interface InputWidget<T, W> extends WrapperPlugin<WidgetModel>,
 	UIComponent<W>
 {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return InputWidget.class;
+	}
 
 	/** Updates the model to reflect the latest widget state. */
 	void updateModel();

@@ -37,7 +37,6 @@ import org.scijava.service.Service;
  *
  * @author Mark Hiner
  */
-@Plugin(type = Service.class)
 public class DefaultConvertService extends AbstractConvertService
 {
 	// Trivial implementation

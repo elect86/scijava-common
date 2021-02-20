@@ -37,6 +37,7 @@ import org.scijava.module.ModuleInfo;
 import org.scijava.module.ModuleService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.run.AbstractCodeRunner;
 import org.scijava.run.CodeRunner;
 
@@ -46,8 +47,12 @@ import org.scijava.run.CodeRunner;
  * @author Curtis Rueden
  * @see ModuleInfo
  */
-@Plugin(type = CodeRunner.class)
 public class ModuleCodeRunner extends AbstractCodeRunner {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return CodeRunner.class;
+	}
 
 	@Parameter
 	private ModuleService moduleService;

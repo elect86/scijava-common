@@ -36,6 +36,7 @@ import org.scijava.display.Display;
 import org.scijava.log.LogService;
 import org.scijava.plugin.AbstractRichPlugin;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.ui.DialogPrompt;
 import org.scijava.ui.UserInterface;
 import org.scijava.ui.viewer.DisplayWindow;
@@ -51,9 +52,22 @@ import org.scijava.util.ListUtils;
  * @author Richard Domander (Royal Veterinary College, London)
  * @author Curtis Rueden
  */
-@Plugin(type = UserInterface.class, name = HeadlessUI.NAME,
-	priority = Priority.VERY_LOW)
 public class HeadlessUI extends AbstractRichPlugin implements UserInterface {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return UserInterface.class;
+	}
+
+	@Override
+	public String name() {
+		return HeadlessUI.NAME;
+	}
+
+	@Override
+	public double priority() {
+		return Priority.VERY_LOW;
+	}
 
 	public static final String NAME = "headless";
 

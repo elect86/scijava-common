@@ -34,6 +34,7 @@ import java.io.File;
 import org.scijava.display.Display;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.script.ScriptService;
 
 /**
@@ -41,10 +42,13 @@ import org.scijava.script.ScriptService;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = DragAndDropHandler.class)
 public class ScriptFileDragAndDropHandler extends
 	AbstractDragAndDropHandler<File>
 {
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DragAndDropHandler.class;
+	}
 
 	@Parameter(required = false)
 	private ScriptService scriptService;

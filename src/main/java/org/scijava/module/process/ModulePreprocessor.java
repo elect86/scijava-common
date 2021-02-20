@@ -47,5 +47,6 @@ import org.scijava.module.Module;
  * @author Curtis Rueden
  */
 public interface ModulePreprocessor extends ModuleProcessor, Cancelable {
+
 	// NB: No implementation needed.
 }

@@ -46,9 +46,12 @@ import org.scijava.widget.InputHarvester;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PreprocessorPlugin.class,
-	priority = InputHarvester.PRIORITY + 1)
 public class LoadInputsPreprocessor extends AbstractPreprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return InputHarvester.PRIORITY + 1;
+	}
 
 	@Parameter
 	private ModuleService moduleService;

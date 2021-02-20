@@ -51,8 +51,12 @@ import org.scijava.plugin.Plugin;
  * @author Lee Kamentsky
  * @author Barry DeZonia
  */
-@Plugin(type = PostprocessorPlugin.class, priority = Priority.VERY_LOW)
 public class DisplayPostprocessor extends AbstractPostprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return Priority.VERY_LOW;
+	}
 
 	@Parameter(required = false)
 	private DisplayService displayService;

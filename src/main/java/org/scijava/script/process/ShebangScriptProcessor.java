@@ -32,6 +32,7 @@ package org.scijava.script.process;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.script.ScriptInfo;
 import org.scijava.script.ScriptLanguage;
 import org.scijava.script.ScriptService;
@@ -42,8 +43,12 @@ import org.scijava.script.ScriptService;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = ScriptProcessor.class)
 public class ShebangScriptProcessor implements ScriptProcessor {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return ScriptProcessor.class;
+	}
 
 	@Parameter
 	private ScriptService scriptService;

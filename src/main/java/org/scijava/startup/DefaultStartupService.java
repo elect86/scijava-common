@@ -43,7 +43,6 @@ import org.scijava.service.Service;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = Service.class)
 public class DefaultStartupService extends AbstractService implements
 	StartupService
 {

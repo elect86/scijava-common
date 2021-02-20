@@ -45,7 +45,6 @@ import org.scijava.ui.UIService;
  *
  * @author Mark Hiner
  */
-@Plugin(type = ConsoleArgument.class)
 public class HeadlessArgument extends AbstractConsoleArgument {
 
 	@Parameter(required = false)

@@ -34,6 +34,7 @@ import java.net.URL;
 
 import org.scijava.Disposable;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.plugin.SingletonPlugin;
 
 /**
@@ -52,6 +53,11 @@ import org.scijava.plugin.SingletonPlugin;
  * @see PlatformService
  */
 public interface Platform extends SingletonPlugin, Disposable {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return Platform.class;
+	}
 
 	/** Java Runtime Environment vendor to match. */
 	default String javaVendor() {

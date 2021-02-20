@@ -33,6 +33,7 @@ import java.io.File;
 
 import org.scijava.plugin.Plugin;
 import org.scijava.plugin.RichPlugin;
+import org.scijava.plugin.SciJavaPlugin;
 import org.scijava.plugin.SingletonPlugin;
 import org.scijava.util.AppUtils;
 import org.scijava.util.Manifest;
@@ -53,6 +54,11 @@ import org.scijava.util.POM;
  * @see AppService
  */
 public interface App extends RichPlugin, SingletonPlugin {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return App.class;
+	}
 
 	/** Gets the title of the application. */
 	default String getTitle() {

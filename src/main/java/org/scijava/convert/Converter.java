@@ -37,6 +37,7 @@ import java.util.Set;
 import org.scijava.object.ObjectService;
 import org.scijava.plugin.HandlerPlugin;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * Extensible conversion {@link Plugin} for converting between classes and
@@ -46,6 +47,11 @@ import org.scijava.plugin.Plugin;
  * @author Mark Hiner
  */
 public interface Converter<I, O> extends HandlerPlugin<ConversionRequest> {
+
+	@Override
+	default Class<? extends SciJavaPlugin> type() {
+		return Converter.class;
+	}
 
 	/**
 	 * Checks whether a given {@link ConversionRequest} can be processed, by

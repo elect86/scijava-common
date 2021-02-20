@@ -63,7 +63,6 @@ import org.scijava.tool.event.ToolDeactivatedEvent;
  * @see Tool
  * @see Tool
  */
-@Plugin(type = Service.class)
 public class DefaultToolService extends AbstractSingletonService<Tool>
 	implements ToolService
 {

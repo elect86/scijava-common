@@ -73,7 +73,6 @@ public class CommandArrayConverterTest {
     }
 
     /** A command which uses a UserClass Raw Array parameter. */
-    @Plugin(type = Command.class)
     public static class CommandRawArrayInput implements Command {
 
         @Parameter
@@ -96,7 +95,6 @@ public class CommandArrayConverterTest {
     }
 
     /** A command which uses a UserClass Array with generics wildcard  */
-    @Plugin(type = Command.class)
     public static class CommandGenericsWildcardArrayInput implements Command {
 
         @Parameter
@@ -118,8 +116,12 @@ public class CommandArrayConverterTest {
         }
     }
 
-    @Plugin(type = org.scijava.convert.Converter.class, priority = Priority.LOW)
     public static class StringToUserClassConverterNoGenerics extends AbstractConverter<String, UserClass[]> {
+
+        @Override
+        public double priority() {
+            return Priority.LOW;
+        }
 
         @Override
         public <T> T convert(Object src, Class<T> dest) {

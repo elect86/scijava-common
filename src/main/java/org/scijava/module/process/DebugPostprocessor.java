@@ -42,8 +42,12 @@ import org.scijava.plugin.Plugin;
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = PostprocessorPlugin.class, priority = Priority.FIRST)
 public class DebugPostprocessor extends AbstractPostprocessorPlugin {
+
+	@Override
+	public double priority() {
+		return Priority.FIRST;
+	}
 
 	@Parameter(required = false)
 	private LogService log;

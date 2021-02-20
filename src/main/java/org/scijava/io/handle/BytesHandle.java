@@ -35,6 +35,7 @@ import java.io.IOException;
 import org.scijava.io.ByteBank;
 import org.scijava.io.location.BytesLocation;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * {@link DataHandle} for a {@link BytesLocation}.
@@ -43,8 +44,12 @@ import org.scijava.plugin.Plugin;
  * @author Melissa Linkert
  * @author Gabriel Einsdorf
  */
-@Plugin(type = DataHandle.class)
 public class BytesHandle extends AbstractDataHandle<BytesLocation> {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DataHandle.class;
+	}
 
 	private long offset = 0;
 

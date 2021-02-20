@@ -833,10 +833,13 @@ public class ConvertServiceTest {
 	 * input candidates for converting to {@link HisList}s. The actual conversion
 	 * methods are not implemented and are unnecessary.
 	 */
-	@Plugin(type = Converter.class, priority = Priority.LAST)
 	public static class StringHisListConverter extends
 		AbstractConverter<String, HisList>
 	{
+		@Override
+		public double priority() {
+			return Priority.LAST;
+		}
 
 		// Sample strings
 

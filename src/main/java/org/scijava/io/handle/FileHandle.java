@@ -35,14 +35,19 @@ import java.util.Date;
 
 import org.scijava.io.location.FileLocation;
 import org.scijava.plugin.Plugin;
+import org.scijava.plugin.SciJavaPlugin;
 
 /**
  * {@link DataHandle} for a {@link FileLocation}.
  * 
  * @author Curtis Rueden
  */
-@Plugin(type = DataHandle.class)
 public class FileHandle extends AbstractDataHandle<FileLocation> {
+
+	@Override
+	public Class<? extends SciJavaPlugin> type() {
+		return DataHandle.class;
+	}
 
 	// -- Fields --
 
